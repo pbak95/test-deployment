@@ -1,0 +1,3 @@
+replicas: 1
+image:
+  version: 0.1.0-build.9ca909065ec58debd1793d8d57fbf33b27a53349
