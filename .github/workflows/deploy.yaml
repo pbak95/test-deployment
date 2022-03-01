@@ -31,3 +31,5 @@ jobs:
         run: sed -i -e "/^\([[:space:]]*version:\ \).*/s//\1${{ github.event.inputs.version }}/" charts/${{ github.event.inputs.app }}/values.yaml
       - name: Commit changes
         run: git add charts/${{ github.event.inputs.app }}/values.yaml && git commit -m "Update '${{ github.event.inputs.app }}' version to ${{ github.event.inputs.version }}"
+      - name: Push changes
+        run: git push
