@@ -21,6 +21,10 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
+      - name: Setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
       - name: Print application name and version
         run: echo ${{ github.event.inputs.app }}:${{ github.event.inputs.version }}
       - name: Update application version
