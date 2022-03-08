@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: netshoot
-        image: "nicolaka/netshoot:{{ .Values.image.version }}"
+        image: "leodotcloud/swiss-army-knife:{{ .Values.image.version }}"
         ports:
         - containerPort: 8080
