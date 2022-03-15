@@ -1,21 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-app-deployment
+  name: {{ .Values.name }}-deployment
   labels:
-    app: test-app
+    app: {{ .Values.name }}
+    chart: {{ template "chart.label" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
-      app: test-app
+      app: {{ .Values.name }}
   template:
     metadata:
       labels:
-        app: test-app
+        app: {{ .Values.name }}
+        chart: {{ template "chart.label" $ }}
+        release: {{ $.Release.Name }}
     spec:
       containers:
       - name: test-app
         image: "pbak95/test-app:{{ .Values.image.version }}"
         ports:
-        - containerPort: 8080
+        - containerPort: {{ .Values.port }}
