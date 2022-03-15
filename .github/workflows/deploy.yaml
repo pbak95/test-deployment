@@ -11,6 +11,7 @@ on:
         type: choice
         options:
           - 'test-app'
+          - 'test-api-gw'
       version:
         description: 'Version of the application ~ docker image tag'
         required: true
