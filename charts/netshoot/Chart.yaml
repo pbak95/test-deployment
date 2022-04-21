@@ -1,7 +1,0 @@
-apiVersion: v2
-name: netshoot
-description: A Helm chart for netshoot
-kubeVersion: '>=1.15.3'
-type: application
-version: 0.0.0
-dependencies: []
